@@ -27,6 +27,10 @@ extend google.protobuf.FieldOptions {
     optional string field_separator   = 1014; // Plain模式字段分隔符（默认为: ,;|）
     optional bool   field_required    = 1015; // 字段标记为必须，相当于 pb2 的required
 
+    // 当前字段类型为Timestamp或Duration时且转换过程发生数据转换时，此扩展允许把原始数据写入指定字段
+    // 目标字段必须是string类型且repeated属性和当前字段保持一致
+    optional string field_origin_value = 1016;
+
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
 }
