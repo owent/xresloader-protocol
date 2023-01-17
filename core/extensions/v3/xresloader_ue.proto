@@ -25,6 +25,6 @@ enum loader_mode {
 extend google.protobuf.MessageOptions {
   string helper = 1101;       // 辅助函数的类名
   bool not_data_table = 1102; // 不是DataTable，helper类里不生成加载代码
-  loader_mode default_loader = 1103; // 默认Loader模式
-  repeated include_header = 1104;    // 额外的包含头文件
+  loader_mode default_loader = 1103;     // 默认Loader模式
+  repeated string include_header = 1104; // 额外的包含头文件
 }
