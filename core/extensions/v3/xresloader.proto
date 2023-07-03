@@ -19,12 +19,12 @@ extend google.protobuf.MessageOptions {
 }
 
 extend google.protobuf.FieldOptions {
-    string verifier           = 1001; // 附加验证器
-    string field_description  = 1011; // 描述信息（不同的输出可能有不同的功能）
-    string field_alias        = 1012; // 字段别名，可用于验证器名字
-    int32  field_ratio        = 1013; // 字段放大倍数，可用于验证器名字
-    string field_separator    = 1014; // Plain模式字段分隔符（默认为: ,;|）
-    bool   field_required     = 1015; // 字段标记为必须，相当于 pb2 的required
+    string          verifier          = 1001; // 附加验证器
+    string          field_description = 1011; // 描述信息（不同的输出可能有不同的功能）
+    repeated string field_alias       = 1012; // 字段别名，可用于验证器名字
+    int32           field_ratio       = 1013; // 字段放大倍数，可用于验证器名字
+    string          field_separator   = 1014; // Plain模式字段分隔符（默认为: ,;|）
+    bool            field_required    = 1015; // 字段标记为必须，相当于 pb2 的required
 
     // 当前字段类型为Timestamp或Duration时且转换过程发生数据转换时，此扩展允许把原始数据写入指定字段
     // 目标字段必须是string类型且repeated属性和当前字段保持一致
@@ -48,8 +48,8 @@ extend google.protobuf.EnumOptions {
 }
 
 extend google.protobuf.EnumValueOptions {
-    string enumv_description = 1001; // 描述信息（不同的输出可能有不同的功能）
-    string enum_alias        = 1002; // 枚举别名，可用于验证器名字
+    string          enumv_description = 1001; // 描述信息（不同的输出可能有不同的功能）
+    repeated string enum_alias        = 1002; // 枚举别名，可用于验证器名字
 
     // 用户自定义扩展字段请使用 2000 to max;
 }
