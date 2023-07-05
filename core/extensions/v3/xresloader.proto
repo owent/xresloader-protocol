@@ -20,6 +20,8 @@ extend google.protobuf.MessageOptions {
 
 extend google.protobuf.FieldOptions {
     string          verifier          = 1001; // 附加验证器
+    repeated string field_unique_tag  = 1002; // 唯一性检测Tag，所有tag相同的字段会组合刀一起检查唯一性
+    bool            field_not_null    = 1003; // 如果配置了字段映射，忽略此项为空的行
     string          field_description = 1011; // 描述信息（不同的输出可能有不同的功能）
     repeated string field_alias       = 1012; // 字段别名，可用于验证器名字
     int32           field_ratio       = 1013; // 字段放大倍数，可用于验证器名字
@@ -37,6 +39,7 @@ extend google.protobuf.FieldOptions {
 extend google.protobuf.OneofOptions {
     string oneof_description = 1001; // 描述信息（不同的输出可能有不同的功能）
     string oneof_separator   = 1002; // Plain模式字段分隔符（默认为: ,;|）
+    bool   oneof_not_null    = 1003; // 如果配置了字段映射，忽略此项为空的行
 
     // 用户自定义扩展字段请使用 2000 to max;
 }
