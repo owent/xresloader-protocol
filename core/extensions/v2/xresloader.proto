@@ -23,8 +23,8 @@ extend google.protobuf.FieldOptions {
     optional string validator           = 1001; // 附加验证器
     repeated string field_unique_tag    = 1002; // 唯一性检测Tag，所有tag相同的字段会组合刀一起检查唯一性
     optional bool   field_not_null      = 1003; // 如果配置了字段映射，忽略此项为空的行
-    optional        map_key_validator   = 1004; // (Map类型时)Key的附加验证器
-    optional        map_value_validator = 1005; // (Map类型时)Value的附加验证器
+    optional string map_key_validator   = 1004; // (Map类型时)Key的附加验证器
+    optional string map_value_validator = 1005; // (Map类型时)Value的附加验证器
     optional string verifier            = 1009; // 附加验证器
     optional string field_description   = 1011; // 描述信息（不同的输出可能有不同的功能）
     repeated string field_alias         = 1012; // 字段别名，可用于验证器名字
