@@ -36,6 +36,9 @@ extend google.protobuf.FieldOptions {
     // 目标字段必须是string类型且repeated属性和当前字段保持一致
     optional string field_origin_value = 1016;
 
+    // Plain模式下允许字段缺失
+    optional bool field_allow_missing_in_plain_mode = 1017;
+
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
 }
@@ -44,6 +47,9 @@ extend google.protobuf.OneofOptions {
     optional string oneof_description = 1001; // 描述信息（不同的输出可能有不同的功能）
     optional string oneof_separator   = 1002; // Plain模式字段分隔符（默认为: ,;|）
     optional bool   oneof_not_null    = 1003; // 如果配置了字段映射，忽略此项为空的行
+
+    // Plain模式下允许字段缺失
+    optional bool oneof_allow_missing_in_plain_mode = 1004;
 
     // 用户自定义扩展字段请使用 2000 to max;
 }
