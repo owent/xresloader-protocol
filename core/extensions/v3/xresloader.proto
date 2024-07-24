@@ -48,9 +48,9 @@ extend google.protobuf.FieldOptions {
     // List类型裁剪选项
     ListStripOption field_list_strip_option = 1018;
     // List类型最小长度
-    int32 field_list_min_size = 1019;
+    string field_list_min_size = 1019;
     // List类型最大长度
-    int32 field_list_max_size = 1020;
+    string field_list_max_size = 1020;
 
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
