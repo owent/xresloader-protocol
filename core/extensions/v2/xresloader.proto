@@ -4,6 +4,13 @@ import "google/protobuf/descriptor.proto";
 
 package org.xresloader;
 
+enum ListStripOption {
+    LIST_STRIP_DEFAULT = 0; // 使用默认设置（受--list-strip-all-empty/--list-keep-empty/--list-strip-empty-tail影响）
+    LIST_STRIP_NOTHING = 1; // 不裁剪任何值，相当于 --list-keep-empty
+    LIST_STRIP_TAIL    = 2; // 裁剪尾部空值，相当于 --list-strip-empty-tail
+    LIST_STRIP_ALL     = 3; // 裁剪全部空值，相当于 --list-strip-all-empty
+}
+
 extend google.protobuf.FileOptions {
     optional string file_description = 1001; // 描述信息（不同的输出可能有不同的功能）
 
@@ -38,6 +45,13 @@ extend google.protobuf.FieldOptions {
 
     // Plain模式下允许字段缺失
     optional bool field_allow_missing_in_plain_mode = 1017;
+
+    // List类型裁剪选项
+    optional ListStripOption field_list_strip_option = 1018;
+    // List类型最小长度
+    optional int32 field_list_min_size = 1019;
+    // List类型最大长度
+    optional int32 field_list_max_size = 1020;
 
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
