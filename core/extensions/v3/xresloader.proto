@@ -51,6 +51,8 @@ extend google.protobuf.FieldOptions {
     string field_list_min_size = 1019;
     // List类型最大长度
     string field_list_max_size = 1020;
+    // List类型严格尺寸模式(不允许对min_size以下数据自动填充)
+    bool field_list_strict_size = 1021;
 
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
