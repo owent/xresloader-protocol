@@ -55,6 +55,8 @@ extend google.protobuf.FieldOptions {
     // List类型严格尺寸模式(不允许对min_size以下数据自动填充)
     optional bool field_list_strict_size = 1021;
 
+    repeated string field_tag = 1022; // 字段Tag,可用于转出时设置跳过
+
     // 用户自定义扩展字段请使用 2000 to max;
     // extensions 1000 to max;
 }
@@ -66,6 +68,9 @@ extend google.protobuf.OneofOptions {
 
     // Plain模式下允许字段缺失
     optional bool oneof_allow_missing_in_plain_mode = 1004;
+
+    // 字段Tag,可用于转出时设置跳过
+    repeated string oneof_tag = 1005;
 
     // 用户自定义扩展字段请使用 2000 to max;
 }
