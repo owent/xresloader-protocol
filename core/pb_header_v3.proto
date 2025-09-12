@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "github.com/xresloader/xresloader";
+
 package org.xresloader.pb;
 
 message xresloader_data_source {

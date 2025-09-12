@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "github.com/xresloader/xresloader";
+
 import "google/protobuf/descriptor.proto";
 
 package org.xresloader.ue;
